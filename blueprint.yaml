@@ -12,64 +12,64 @@ blueprint:
           integration: mqtt
 
     press_single_left:
-      name: Single button press
-      description: Action to run on single button press
+      name: Single left button press
+      description: Action to run on single left button press
       default: []
       selector:
         action: {}
 
     press_double_left:
-      name: Double button press
-      description: Action to run on double button press
+      name: Double left button press
+      description: Action to run on double left button press
       default: []
       selector:
         action: {}
 
     press_hold_left:
-      name: Triple button press
-      description: Action to run on double triple press
+      name: Hold left button
+      description: Action to run on holding left button
       default: []
       selector:
         action: {}
 
     press_single_right:
-      name: Single button press
-      description: Action to run on single button press
+      name: Single right button press
+      description: Action to run on single right button press
       default: []
       selector:
         action: {}
 
     press_double_right:
-      name: Double button press
-      description: Action to run on double button press
+      name: Double right button press
+      description: Action to run on double right button press
       default: []
       selector:
         action: {}
 
     press_hold_right:
-      name: Triple button press
-      description: Action to run on double triple press
+      name: Hold right button
+      description: Action to run on holding right button
       default: []
       selector:
         action: {}
 
     press_single_both:
-      name: Single button press
-      description: Action to run on single button press
+      name: Single both buttons press
+      description: Action to run on single both button press
       default: []
       selector:
         action: {}
 
     press_double_both:
-      name: Double button press
-      description: Action to run on double button press
+      name: Double both buttons press
+      description: Action to run on double both button press
       default: []
       selector:
         action: {}
 
     press_hold_both:
-      name: Triple button press
-      description: Action to run on double triple press
+      name: Hold both buttons
+      description: Action to run on holding both buttons
       default: []
       selector:
         action: {}
