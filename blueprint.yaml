@@ -1,0 +1,120 @@
+blueprint:
+  name: Aqara Double Switch
+  description: 'Blueprint for Home Assistant for the Xiaomi Aqara double key wireless wall switch using zigbee2mqtt.'
+  domain: automation
+  input:
+    switch:
+      name: Switch
+      description: Action sensor of Aqara Wireless Switch to use
+      selector:
+        entity:
+          domain: sensor
+          integration: mqtt
+
+    press_single_left:
+      name: Single button press
+      description: Action to run on single button press
+      default: []
+      selector:
+        action: {}
+
+    press_double_left:
+      name: Double button press
+      description: Action to run on double button press
+      default: []
+      selector:
+        action: {}
+
+    press_hold_left:
+      name: Triple button press
+      description: Action to run on double triple press
+      default: []
+      selector:
+        action: {}
+
+    press_single_right:
+      name: Single button press
+      description: Action to run on single button press
+      default: []
+      selector:
+        action: {}
+
+    press_double_right:
+      name: Double button press
+      description: Action to run on double button press
+      default: []
+      selector:
+        action: {}
+
+    press_hold_right:
+      name: Triple button press
+      description: Action to run on double triple press
+      default: []
+      selector:
+        action: {}
+
+    press_single_both:
+      name: Single button press
+      description: Action to run on single button press
+      default: []
+      selector:
+        action: {}
+
+    press_double_both:
+      name: Double button press
+      description: Action to run on double button press
+      default: []
+      selector:
+        action: {}
+
+    press_hold_both:
+      name: Triple button press
+      description: Action to run on double triple press
+      default: []
+      selector:
+        action: {}
+
+
+mode: restart
+max_exceeded: silent
+trigger:
+  - platform: state
+    entity_id: !input switch
+    #attribute: click
+
+#  , single_right, single_both, , , double_both, , hold_right, hold_both.
+
+action:
+  - variables:
+      command: "{{ trigger.to_state.state }}"
+
+  - choose:
+      - conditions:
+          - "{{ command == 'single_left' }}"
+        sequence: !input press_single_left
+      - conditions:
+          - "{{ command == 'double_left' }}"
+        sequence: !input press_double_left
+      - conditions:
+          - "{{ command == 'hold_left' }}"
+        sequence: !input press_hold_left
+
+      - conditions:
+          - "{{ command == 'single_right' }}"
+        sequence: !input press_single_right
+      - conditions:
+          - "{{ command == 'double_right' }}"
+        sequence: !input press_double_right
+      - conditions:
+          - "{{ command == 'hold_right' }}"
+        sequence: !input press_hold_right
+
+      - conditions:
+          - "{{ command == 'single_both' }}"
+        sequence: !input press_single_right
+      - conditions:
+          - "{{ command == 'double_both' }}"
+        sequence: !input press_double_right
+      - conditions:
+          - "{{ command == 'hold_both' }}"
+        sequence: !input press_hold_right
