@@ -111,10 +111,10 @@ action:
 
       - conditions:
           - "{{ command == 'single_both' }}"
-        sequence: !input press_single_right
+        sequence: !input press_single_both
       - conditions:
           - "{{ command == 'double_both' }}"
-        sequence: !input press_double_right
+        sequence: !input press_double_both
       - conditions:
           - "{{ command == 'hold_both' }}"
-        sequence: !input press_hold_right
+        sequence: !input press_hold_both
