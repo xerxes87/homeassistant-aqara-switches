@@ -1,5 +1,5 @@
 blueprint:
-  name: Aqara Double Switch
+  name: Aqara Double Key Switch
   description: 'Blueprint for Home Assistant for the Xiaomi Aqara double key wireless wall switch using zigbee2mqtt.'
   domain: automation
   input:
@@ -80,9 +80,6 @@ max_exceeded: silent
 trigger:
   - platform: state
     entity_id: !input switch
-    #attribute: click
-
-#  , single_right, single_both, , , double_both, , hold_right, hold_both.
 
 action:
   - variables:
