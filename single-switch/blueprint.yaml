@@ -1,5 +1,5 @@
 blueprint:
-  name: Aqara Wireless Switch
+  name: Aqara Single Switch
   description: 'Control anything using Aqara Wireless Switch'
   domain: automation
   input:
