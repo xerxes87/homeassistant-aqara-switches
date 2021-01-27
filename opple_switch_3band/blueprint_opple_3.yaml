@@ -3,11 +3,12 @@ blueprint:
   description: 'Control anything using Aqara Opple six button remote'
   domain: automation
   input:
-    remote:
-      name: Remote
+    switch:
+      name: Switch
       description: Opple remote to use
       selector:
-        device:
+        entity:
+          domain: sensor
           integration: mqtt
        
 
@@ -231,7 +232,7 @@ mode: restart
 max_exceeded: silent
 trigger:
   - platform: state
-    entity_id: !input remote
+    entity_id: !input switch
 
 action:
   - variables:
