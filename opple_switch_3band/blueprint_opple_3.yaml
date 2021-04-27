@@ -236,10 +236,10 @@ trigger:
 
 action:
   - variables:
-      command: "{{ trigger.to_state.state }}"
+      command: "{{ trigger.state }}"
   - choose:
 
-      # ---------------------------- BUTTON TOP LEFT ----------------------------
+  # ---------------------------- BUTTON TOP LEFT ----------------------------
       - conditions:
           - '{{ command == "button_1_single" }}'
         sequence: !input 'button_top_left_single_press'
