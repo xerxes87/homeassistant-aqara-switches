@@ -233,10 +233,10 @@ max_exceeded: silent
 trigger:
   - platform: state
     entity_id: !input switch
-
+    attribute: action
 action:
   - variables:
-      command: "{{ trigger.state }}"
+      command: "{{ trigger.to_state.state }}"
   - choose:
 
   # ---------------------------- BUTTON TOP LEFT ----------------------------
